@@ -38,6 +38,7 @@ interface Constants {
 
     String PARAMETERS_PARAM_KEY = "parameters";
     String TYPE_PARAM_KEY = "type";
+    String PARAMTYPE_SUMMARY = "summary";
     String DESCRIPTION_PARAM_KEY = "description";
     String PRODUCES_MEDIATYPE_PARAM_KEY = "produces";
     String CONSUMES_MEDIATYPE_PARAM_KEY = "consumes";

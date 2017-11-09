@@ -467,6 +467,9 @@ class RAMLtoSwagger implements Constants {
         JSONObject operation = new JSONObject();
         try {
 
+            //Method summary
+            operation.put(PARAMTYPE_SUMMARY, action.getValue().getResource().getDescription());
+
             //Get all the types that the method consumes
             operation.put(CONSUMES_MEDIATYPE_PARAM_KEY, getConsumesArray(action));
 

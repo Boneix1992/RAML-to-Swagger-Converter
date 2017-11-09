@@ -3,6 +3,7 @@ package org.macrulez.utils.raml2swagger;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 
+@Slf4j
 @NoArgsConstructor
 public class RAMLtoSwaggerTest {
     private static final String PRODUCT_API_RAML = "/product-api.raml";
@@ -27,6 +29,7 @@ public class RAMLtoSwaggerTest {
 
         String swagger = raml2Swagger.convertToSwagger(raml);
         Assert.assertNotNull(swagger);
+        LOGGER.info("swagger {}...", swagger);
 
         TypeReference<HashMap<String, Object>> typeRef = new TypeReference<HashMap<String, Object>>() {};
         Map<String, Object> json = objectMapper.readValue(swagger, typeRef);
